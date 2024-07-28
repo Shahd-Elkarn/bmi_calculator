@@ -80,7 +80,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                       });
                                     });
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.remove,
                                     color: Colors.white,
                                   ),
@@ -102,7 +102,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                       age++;
                                     });
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.add,
                                     color: Colors.white,
                                   ),
@@ -161,7 +161,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                       });
                                     });
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.remove,
                                     color: Colors.white,
                                   ),
@@ -183,7 +183,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                       weight++;
                                     });
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.add,
                                     color: Colors.white,
                                   ),

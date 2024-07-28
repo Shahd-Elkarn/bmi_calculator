@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
 
-class BmiResultScreen extends StatelessWidget {
+class BmiResultScreen extends StatefulWidget {
   final double? result;
+
+  const BmiResultScreen({super.key, @required this.result});
+
+  @override
+  _BmiResultScreenState createState() => _BmiResultScreenState();
+}
+
+class _BmiResultScreenState extends State<BmiResultScreen> {
   late String category;
 
-  BmiResultScreen({
-    Key? key,
-    @required this.result,
-  }) : super(key: key) {
-    if (result! < 18.5) {
+  @override
+  void initState() {
+    super.initState();
+   if (widget.result! < 18.5) {
       category = 'UNDERWEIGHT';
-    } else if (result! >= 18.5 && result! <= 24.9) {
+    } else if (widget.result! >= 18.5 && widget.result! <= 24.9) {
       category = 'NORMAL WEIGHT';
-    } else if (result! >= 25 && result! <= 29.9) {
+    } else if (widget.result! >= 25 && widget.result! <= 29.9) {
       category = 'OVERWEIGHT';
-    } else if (result! >= 30 && result! <= 40) {
+    } else if (widget.result! >= 30 && widget.result! <= 40) {
       category = 'OBESITY';
     } else {
       category = 'SERVERE OBESITY';
@@ -77,7 +84,7 @@ class BmiResultScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '${result?.toStringAsFixed(2).split('.')[0]}',  // Integer part
+                        '${widget.result?.toStringAsFixed(2).split('.')[0]}', 
                         style: const TextStyle(
                           fontSize: 140,
                           fontWeight: FontWeight.w700,
@@ -85,7 +92,7 @@ class BmiResultScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '.${result?.toStringAsFixed(2).split('.')[1]}',  // Decimal part
+                        '.${widget.result?.toStringAsFixed(2).split('.')[1]}',  
                         style: const TextStyle(
                           fontSize: 42,
                           fontWeight: FontWeight.w500,
@@ -127,7 +134,7 @@ class BmiResultScreen extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    'Obesity: BMI 30 to 40',
+                    'Obesity: 30 to 40',
                     style: TextStyle(
                       color: Color(0xfff081854),
                       fontSize: 13,
@@ -172,7 +179,6 @@ class BmiResultScreen extends StatelessWidget {
           ],
         ),
       ),
-     
     );
   }
 }

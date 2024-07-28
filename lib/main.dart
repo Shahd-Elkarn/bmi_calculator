@@ -108,7 +108,8 @@ class MyHomePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const BmiScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const BmiScreen()),
                       );
                     },
                     child: const Text(
